@@ -8,7 +8,7 @@ public class WebGPUCheckLib : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void InitCanvas(int width, int height);
     [DllImport("__Internal")]
-    private static extern void GetNativePixcelData(int width, int height, int texPtr);
+    private static extern void GetNativePixelData(int width, int height, int texPtr);
 
     [SerializeField] private Camera _captureCamera;
     [SerializeField] private RawImage _preview;
@@ -31,7 +31,7 @@ public class WebGPUCheckLib : MonoBehaviour
 
     private void Update()
     {
-        GetNativePixcelData(_width, _height, (int)_rtPtr);
+        GetNativePixelData(_width, _height, (int)_rtPtr);
         _cube.Rotate(0.1f, 0.2f, 0.5f);
     }
 }

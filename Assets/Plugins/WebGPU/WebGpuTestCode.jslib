@@ -5,7 +5,7 @@ var WebGpuTestCode = {
         imageData: null,
     },
 
-    InitCanvas: function(width, height) {
+    InitCanvas: function (width, height) {
         var cnv = document.createElement('canvas');
         cnv.width = width;
         cnv.height = height;
@@ -19,8 +19,8 @@ var WebGpuTestCode = {
         managedObjects.imageData = imageData;
     },
 
-    GetNativePixcelData: function (width, height, texPtr) {
-        var texture = Module.WebGPU.device.derivedObjects.get(texPtr);
+    GetNativePixelData: function (width, height, texPtr) {
+        var texture = wgpu[texPtr];
         var device = Module.WebGPU.device;
         var commandEncoder = device.createCommandEncoder();
         var buffer = device.createBuffer({
